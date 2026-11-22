@@ -9,11 +9,11 @@ header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:sp
 h1{font-size:18px;margin:0;background:linear-gradient(90deg,#ff0,#f0f,#0ff);-webkit-background-clip:text;color:transparent;cursor:pointer}
 button{box-shadow:inset 0 1px 0 #ffffff55,inset 0 -2px 3px #0005,0 2px 4px #0008;font-family:inherit;cursor:pointer;border:0;border-radius:10px;color:#fff;font-weight:bold;padding:6px 8px;background:#ffffff22;font-size:12px}
 .bal{background:#0008;border:1px solid #ffd70088;border-radius:10px;padding:3px 8px;font-size:12px}.bal b{color:#ffd700;font-size:16px}
-#wrap{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+#wrap{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:4px}
 #plate{flex:none;max-width:94%;background:linear-gradient(#ffffff,#eceef1 60%,#d7dade);color:#1a1a22;border-radius:6px;padding:3px 12px;text-align:center;line-height:1.3;font-size:10px;box-shadow:0 0 0 2px #8b8f96,0 0 0 3px #3a3d42,0 3px 6px #000c,inset 0 1px 0 #fff,inset 0 -2px 3px #0002}
 #plate b{font-size:11px;letter-spacing:.2em;border-bottom:1px solid #999;display:block}#plate span{display:block}#plate .od2{font-size:9.5px;font-weight:700;white-space:nowrap}#plate .od{font-weight:900;font-size:11px;white-space:nowrap}
-#board{flex:1;min-height:0}
-#board{position:relative;aspect-ratio:400/520;height:100%;max-width:100%;border-radius:16px;--x:0;background:linear-gradient(135deg,#f6f6f6,#9a9a9a 25%,#fff 45%,#7d7d7d 70%,#e6e6e6);padding:9px;box-shadow:0 0 0 1px #222,0 10px 24px #000c,inset 0 2px 1px #fff,inset 0 -3px 3px #0006,inset 2px 0 2px #fffa,inset -2px 0 3px #0005}
+#board{flex:none;width:100%;height:auto}
+#board{position:relative;aspect-ratio:400/520;height:auto;max-width:100%;border-radius:16px;--x:0;background:linear-gradient(135deg,#f6f6f6,#9a9a9a 25%,#fff 45%,#7d7d7d 70%,#e6e6e6);padding:9px;box-shadow:0 0 0 1px #222,0 10px 24px #000c,inset 0 2px 1px #fff,inset 0 -3px 3px #0006,inset 2px 0 2px #fffa,inset -2px 0 3px #0005}
 #board::before{content:"";position:absolute;left:5%;right:5%;top:-7px;height:14px;border-radius:10px;background:linear-gradient(#7a2a35,#3a0c14);box-shadow:0 0 10px #6a1a2588;z-index:2}
 #inner::after{content:"";position:absolute;inset:0;border-radius:12px;pointer-events:none;box-shadow:inset 0 0 0 2px #0008,inset 0 6px 14px #000a,inset 0 -2px 6px #fff3;background:linear-gradient(115deg,#fff0 30%,#ffffff14 42%,#fff0 50%)}
 #inner{position:relative;width:100%;height:100%;border-radius:12px;overflow:hidden}
@@ -90,7 +90,7 @@ body.rush #board{box-shadow:0 0 0 1px #222,0 0 26px #ff2bd6,0 0 40px #ffd000}bod
 #aceStage{font-size:8.5cqw;font-weight:900;color:#fff;-webkit-text-stroke:.8px #000;paint-order:stroke fill;text-shadow:0 0 8px #f0f;min-height:10.5cqw;line-height:1.1;text-align:center;white-space:nowrap}
 #aceStage.pop2{animation:pop .4s cubic-bezier(.2,2,.4,1) both}
 #hold i{transition:background .45s,box-shadow .45s}
-</style><style>#app{height:100%;height:100dvh;padding-bottom:env(safe-area-inset-bottom);padding-top:calc(.4em + env(safe-area-inset-top));box-sizing:border-box}#title{font-size:clamp(13px,3.2dvh,22px)}#plate{font-size:clamp(10px,1.9dvh,14px)}header button{font-size:clamp(11px,2dvh,15px)}</style></head><body>
+</style><style>#app{height:100%;height:100dvh;overflow-y:auto;padding-bottom:env(safe-area-inset-bottom);padding-top:calc(.4em + env(safe-area-inset-top));box-sizing:border-box}#title{font-size:clamp(13px,3.2dvh,22px)}#plate{font-size:clamp(10px,1.9dvh,14px)}header button{font-size:clamp(11px,2dvh,15px)}</style></head><body>
 <div id="app"><header><h1 id="title">💸Pドパパチ ウルトラスーパードパデラックス💸</h1><div class="bal">持ち玉 <b id="balls"></b> 玉<br><small>累計払い出し <span id="paid"></span></small></div>
 <div><button id="battleBtn">⚔バトル</button> <button id="refill">🎱玉補充(無料)</button> <button id="bgmBtn"></button> <button id="vidBtn"></button></div></header>
 <div id="wrap"><div id="plate"><span>大当たり抽選確率（ヘソ入賞1回ごと・架空の遊技です）</span><span class="od">UR 3％｜SSR 7%｜SR 20%｜R 34.6%｜N 35.4%</span><span style="font-size:9px">※LRはURの1/7（約14.3％）の振り分けです。</span></div><div id="board"><div id="inner"><canvas id="cv"></canvas>
